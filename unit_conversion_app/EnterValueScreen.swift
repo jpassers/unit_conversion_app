@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class EnterValueScreen: UIViewController {
 
@@ -52,35 +53,29 @@ class EnterValueScreen: UIViewController {
         if weight == true {
             print("we doin Kgs")
             convertedVal = 2.20462 * value
-            weightName = "Pounds"
-            
-            
+            weightName = "Ibs"
         } else {
             print("we doin lbs")
             convertedVal = value / 2.20462
-            weightName = "Kilos"
+            weightName = "Kgs"
         }
-        
-        return convertedVal.rounded(toPlaced: 1)
+        convertedVal = convertedVal.roundToDecimal(2)
+        return convertedVal
     }
     
     @IBAction func convertButton(_ sender: UIButton) {
         //execute function converter
         
         val = Double(enterValue.text ?? "0")
-        
         convertEquations(weightBool, insertValueFromTextField: val)
-        
         outputLabel.text = String(convertedVal) + " \(weightName!)"
     }
 }
 
-
 extension Double {
-    func rounded(toPlaced places:Int) -> Double {
-        let divisor = pow(10.0, Double(places))
-        return (self * divisor).rounded() / divisor
+    func roundToDecimal(_ fractionDigits: Int) -> Double {
+        let multiplier = pow(10, Double(fractionDigits))
+        return Darwin.round(self * multiplier) / multiplier
     }
 }
 
-// git test
