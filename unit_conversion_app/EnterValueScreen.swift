@@ -9,11 +9,13 @@
 import UIKit
 import Foundation
 
-class EnterValueScreen: UIViewController {
+class EnterValueScreen: UIViewController, UITextFieldDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidLoad(textView: UITextView) {
         // Do any additional setup after loading the view.
+        super.viewDidLoad()
+        textView.text = "Kilos"
+        textView.textColor = UIColor.lightGray
     }
     
         // outlet fields
