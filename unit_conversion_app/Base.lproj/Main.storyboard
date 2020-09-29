@@ -75,7 +75,7 @@
                                     <constraint firstAttribute="height" constant="200" id="IDq-bA-GXh"/>
                                     <constraint firstAttribute="width" constant="300" id="vhM-Mr-Yzc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
                                 <color key="textColor" red="0.92158097029999997" green="0.92154628039999997" blue="0.9215698242" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>

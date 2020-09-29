@@ -9,27 +9,21 @@
 import UIKit
 import Foundation
 
-class EnterValueScreen: UIViewController, UITextFieldDelegate {
+class EnterValueScreen: UIViewController {
 
-    override func viewDidLoad(textView: UITextView) {
+    override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
-        textView.text = "Kilos"
-        textView.textColor = UIColor.lightGray
     }
     
-        // outlet fields
-    
-    
+    // outlet fields
     @IBOutlet weak var enterValue: UITextField!
     var val: Double!
     var convertedVal: Double!
     var weightBool: Bool = true
     var weightName: String!
-    
     @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet weak var segmentControl: UISegmentedControl!
-    //outputField.text = ans
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         enterValue.resignFirstResponder()
@@ -37,7 +31,6 @@ class EnterValueScreen: UIViewController, UITextFieldDelegate {
 
     @IBAction func enterValueTouch(_ sender: UITextField) {
     }
-    
     
     @IBAction func indexedWeight(_ sender: Any) {
         switch segmentControl.selectedSegmentIndex {
