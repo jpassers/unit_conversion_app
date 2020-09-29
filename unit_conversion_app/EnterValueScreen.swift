@@ -36,10 +36,13 @@ class EnterValueScreen: UIViewController {
         switch segmentControl.selectedSegmentIndex {
         case 0:
             weightBool = true
+            enterValue.placeholder = "Kilos"
         case 1:
             weightBool = false
+            enterValue.placeholder = "Pounds"
         default:
             weightBool = true
+            enterValue.placeholder = "Kilos"
         }
     }
     
