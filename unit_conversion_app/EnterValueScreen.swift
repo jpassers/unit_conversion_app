@@ -50,11 +50,11 @@ class EnterValueScreen: UIViewController {
         
         if weight == true {
             print("we doin Kgs")
-            convertedVal = 2.20462 * value
+            convertedVal = 2.2046226218488 * value
             weightName = "Ibs"
         } else {
             print("we doin lbs")
-            convertedVal = value / 2.20462
+            convertedVal = value / 2.2046226218488
             weightName = "Kgs"
         }
         convertedVal = convertedVal.roundToDecimal(2)
@@ -64,9 +64,14 @@ class EnterValueScreen: UIViewController {
     @IBAction func convertButton(_ sender: UIButton) {
         //execute function converter
         
-        val = Double(enterValue.text ?? "0")
-        convertEquations(weightBool, insertValueFromTextField: val)
-        outputLabel.text = String(convertedVal) + " \(weightName!)"
+        if enterValue != nil {
+            val = Double(enterValue.text ?? "0")
+            convertEquations(weightBool, insertValueFromTextField: val)
+            outputLabel.text = String(convertedVal) + " \(weightName!)"
+            enterValue.resignFirstResponder()
+        } else {
+        enterValue.resignFirstResponder()
+        }
     }
 }
 
