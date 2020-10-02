@@ -64,14 +64,10 @@ class EnterValueScreen: UIViewController {
     @IBAction func convertButton(_ sender: UIButton) {
         //execute function converter
         
-        if enterValue != nil {
-            val = Double(enterValue.text ?? "0")
-            convertEquations(weightBool, insertValueFromTextField: val)
-            outputLabel.text = String(convertedVal) + " \(weightName!)"
-            enterValue.resignFirstResponder()
-        } else {
+        val = Double(enterValue.text ?? "0") ?? 0
+        convertEquations(weightBool, insertValueFromTextField: val)
+        outputLabel.text = String(convertedVal) + " \(weightName!)"
         enterValue.resignFirstResponder()
-        }
     }
 }
 
